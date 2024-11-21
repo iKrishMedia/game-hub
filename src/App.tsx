@@ -8,7 +8,6 @@ function App() {
         lg: `"nav nav" "aside main"`,
       }}
       width={"100vw"}
-      height={"100vh"}
     >
       <GridItem area="nav" bg="coral">
         Nav
