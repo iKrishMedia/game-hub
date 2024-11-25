@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   HStack,
   Image,
   List,
@@ -12,7 +13,7 @@ import { GameQuery } from "../App";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  gameQuery: GameQuery
+  gameQuery: GameQuery;
 }
 
 const GenreList = ({ onSelectGenre, gameQuery }: Props) => {
@@ -20,7 +21,10 @@ const GenreList = ({ onSelectGenre, gameQuery }: Props) => {
   if (error) return null;
   if (isLoading) return <Spinner />;
   return (
-    <div>
+    <>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {genres.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
@@ -28,9 +32,12 @@ const GenreList = ({ onSelectGenre, gameQuery }: Props) => {
               <Image
                 boxSize="32px"
                 borderRadius="8"
+                objectFit="cover"
                 src={getCroppedImageUrl(genre.image_background)}
               />
               <Button
+                whiteSpace="normal"
+                textAlign="left"
                 fontWeight={
                   genre.id === gameQuery.genre?.id ? "bold" : "normal"
                 }
@@ -46,7 +53,7 @@ const GenreList = ({ onSelectGenre, gameQuery }: Props) => {
           </ListItem>
         ))}
       </List>
-    </div>
+    </>
   );
 };
 
