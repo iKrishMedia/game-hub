@@ -1,4 +1,4 @@
-import useData from "./useData";
+import platforms from "../data/platforms";
 
 export interface Platform {
     id: number;
@@ -7,5 +7,5 @@ export interface Platform {
     image_background: string;
 }
 
-const usePlatforms = () => useData<Platform>("/platforms");
+const usePlatforms = () => ({ data: platforms});
 export default usePlatforms;

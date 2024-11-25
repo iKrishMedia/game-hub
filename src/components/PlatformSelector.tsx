@@ -9,8 +9,7 @@ interface Props {
 }
 
 const PlatformSelector = ({ onSelectPlatform, gameQuery }: Props) => {
-  const { data: platforms, error } = usePlatforms();
-  if (error) return null;
+  const { data: platforms } = usePlatforms();
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>

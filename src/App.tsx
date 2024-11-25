@@ -25,7 +25,6 @@ function App() {
         lg: `"nav nav" "aside main"`,
       }}
       width={"100vw"}
-      height={"100vh"}
       templateColumns={{ base: "1fr", lg: "200px 1fr" }}
     >
       <GridItem area="nav">
